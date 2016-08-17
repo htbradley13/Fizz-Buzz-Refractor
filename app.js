@@ -38,4 +38,4 @@ function numberSelectF(numEntryX){
 				$('.Results').append('<p>' + i + '</p>' +'<br>');
 			}
 		}
-	}	
+	}	 
