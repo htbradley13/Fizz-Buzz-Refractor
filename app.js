@@ -5,11 +5,25 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		//This is the number the user picks
-		var numEntry = parseInt($('#Number-entry').val());
+		var numEntry = +($("#Number-entry").val());
 
-		var fizzBuzz = funtion(numEntry) {
+		if (numEntry < 1 || numEntry > 100) {
+			alert("Please enter a number between 1-100");
+		}
+		else { 
+			// Calling the named function at the bottom
+			numberSelectF(numEntry);
+		}
 
-			for (i = 1; i <= numEntry; i++) {
+		$(this)[0].reset();
+
+	});  
+
+});
+
+function numberSelectF(numEntryX){
+
+			for (i = 1; i <= numEntryX; i++) {
 
 		if (i % 3 === 0 && i % 5 === 0) {
 				$('.Results').append('<p>' + 'Fizz Buzz' + '</p>' +'<br>');
@@ -23,15 +37,5 @@ $(document).ready(function() {
 		else {
 				$('.Results').append('<p>' + i + '</p>' +'<br>');
 			}
-
 		}
-	}
-
-		$(this)[0].reset();
-
-	});  
-
-});
-
-
-
+	}	
